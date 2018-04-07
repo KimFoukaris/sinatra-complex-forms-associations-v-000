@@ -42,7 +42,7 @@ class PetsController < ApplicationController
       @owner = Owner.find_by(id: params["pet"]["owner_id"])
       #binding.pry
     end
-      @pet.owner_id = owner.id
+      @pet.owner_id = @owner.id
       @pet.save
     redirect to "pets/#{@pet.id}"
   end
